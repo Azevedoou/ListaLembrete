@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App de Lembretes DTI</title>
+<link rel="stylesheet" href="./cssDTI.css">
+</head>
+<body>
+<div class="container">
+  <h2>Novo lembrete</h2>
+  <input type="text" id="reminderName" placeholder="Nome do lembrete">
+  <input type="date" id="reminderDate" placeholder="Data do lembrete (no formato dd/mm/yyyy)">
+  <button onclick="addReminder()">Criar</button>
+
+  <h3>Lista de lembretes</h3>
+  <ul id="reminderList" class="reminder-list">
+    <!-- Lembretes serão adicionados aqui -->
+  </ul>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
