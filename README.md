@@ -23,6 +23,10 @@ spring.jpa.show-sla = true
 
 # Explicação do Java Spring
 Projeto em Maven
+
 Spring boot version: 3.1.5
+
 Packaging: Jar
+
 Java Version: 21
+
