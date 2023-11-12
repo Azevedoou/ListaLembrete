@@ -46,8 +46,6 @@ Para executar este projeto localmente, siga as etapas abaixo:
 3. Caso use o Visual Studio Code, instale a extensão live server e execute (Opcional).
 4. Acesse `http://localhost:8080` no seu navegador (Caso decida seguir pela etapa 3, essa etapa é desconsiderada).
 
-Para ver os lembretes, simplesmente visite a página principal. Para adicionar um lembrete, preencha os campos de texto e clique em "Criar". Para remover um lembrete, clique no botão 'x' ao lado do lembrete que deseja remover.
-
 ### Especificações Banco de Dados MYSQL
 Foi criado uma única tabela no Banco de Dados MySQL. [Comandos para inicialização do Banco de Dados MySQL](./src/main/resources/static/initBD.sql).
 Copie os comandos, cole na sua base de dados e execute.
@@ -73,3 +71,5 @@ Spring boot version: 3.1.5
 Packaging: Jar
 
 Java Version: 21
+
+Para ver os lembretes, simplesmente visite a página principal. Para adicionar um lembrete, preencha os campos de texto e clique em "Criar". Para remover um lembrete, clique no botão 'x' ao lado do lembrete que deseja remover.
