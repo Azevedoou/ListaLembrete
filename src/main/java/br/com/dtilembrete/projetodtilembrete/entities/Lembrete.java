@@ -15,12 +15,12 @@ public class Lembrete {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id") // Como está na tabela do Backend
 	private Integer id;
-	@Column(name = "nome", length = 200)
+	@Column(name = "nome", length = 200, nullable = true)
 	private String nome;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
-	@Column(name = "data_lembrete")
+	@Column(name = "data_lembrete", nullable = true)
 	private Date data;
 	
 

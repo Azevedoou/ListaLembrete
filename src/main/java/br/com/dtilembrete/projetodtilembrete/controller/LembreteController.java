@@ -1,8 +1,8 @@
 package br.com.dtilembrete.projetodtilembrete.controller;
 
+// Imports necessários.
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import br.com.dtilembrete.projetodtilembrete.DAO.ILembrete;
 import br.com.dtilembrete.projetodtilembrete.entities.Lembrete;
 
@@ -29,13 +28,13 @@ public class LembreteController {
 	
 	// Get
 	@GetMapping
-	public List<Lembrete> listaLembretes(){
+	public List<Lembrete> listLembretes(){
 		return (List<Lembrete>) dao.findAll();
 	}
 	
 	// Create
 	@PostMapping
-	public Lembrete criarLembrete(@RequestBody Lembrete lembrete) {
+	public Lembrete createLembrete(@RequestBody Lembrete lembrete) {
 		System.out.println("Recebendo lembrete: " + lembrete.getId() + " " + lembrete.getNome() + " " + lembrete.getData());
 		Lembrete novoLembrete = dao.save(lembrete);
 		return novoLembrete;
@@ -48,7 +47,7 @@ public class LembreteController {
 		return novoLembrete;
 	}
 	
-	// Envio do ID do lembrete no ".../lembretes/ID" e desas forma é realizado a remoção
+	// Envio do ID do lembrete no "http://.../lembretes/ID" e dessa forma é realizado a remoção.
 	@DeleteMapping("/{id}")
 	public Optional<Lembrete> deletaLembrete(@PathVariable Integer id) {
 		Optional<Lembrete> lembrete = dao.findById(id);

@@ -1,11 +1,11 @@
+// Ao carregar a página, faz o request GET para pegar as informações do BD.
 document.addEventListener('DOMContentLoaded', () => {
   fetchReminders();
 });
 
-// Método que busca as listas no banco de dados e atualiza.
+// Função que busca e atualiza as listas no banco de dados (GET).
 async function fetchReminders() {
   const apiEndpoint = 'http://localhost:8080/lembretes';
-
   try {
     const response = await fetch(apiEndpoint);
     if (!response.ok) {
@@ -18,7 +18,7 @@ async function fetchReminders() {
   }
 }
 
-// Método que mostra os elementos na tela.
+// Função que mostra os elementos HTML na tela.
 function displayReminders(reminders) {
   const reminderList = document.getElementById('reminderList');
   reminderList.innerHTML = ''; // Limpa a lista existente.
@@ -50,7 +50,7 @@ function displayReminders(reminders) {
   });
 }
 
-
+// Função que junta os Lembretes por data.
 function groupRemindersByDate(reminders) {
   const remindersByDate = {};
 
@@ -65,7 +65,7 @@ function groupRemindersByDate(reminders) {
   return remindersByDate;
 }
 
-// Formata a data para o formato adequado.
+// Função que formata a data para o formato adequado.
 function formatDate(dateString) {
   const [year, month, day] = dateString.split('-').map(part => parseInt(part, 10));
   const date = new Date(year, month - 1, day);
@@ -73,7 +73,7 @@ function formatDate(dateString) {
   return date.toLocaleDateString();
 }
 
-// Função 
+// Função que chama outro método de remoção e organiza.
 function deleteReminder(button, id) {
   deleteReminderFromApi(id);
 
@@ -81,12 +81,13 @@ function deleteReminder(button, id) {
   const remindersForDate = reminderItem.closest('.reminders-for-date');
   reminderItem.remove();
 
-  // Se não há mais lembretes para essa data, remover a seção inteira da data
+  // Se não há mais lembretes para essa data, remover a seção inteira da data.
   if (remindersForDate.children.length === 0) {
     remindersForDate.closest('.date-section').remove();
   }
 }
 
+// Função de remoção de lembrete.
 async function deleteReminderFromApi(id) {
   const apiEndpoint = `http://localhost:8080/lembretes/${id}`;
 
@@ -101,22 +102,26 @@ async function deleteReminderFromApi(id) {
   }
 }
 
+// Função assíncrona para adicionar algum lembrete.
 async function addReminder() {
   const name = document.getElementById('reminderName').value;
   const date = document.getElementById('reminderDate').value;
   const today = new Date();
   const reminderDate = new Date(date);
 
+  // Verifica se os campos foram preenchidos devidamente.
   if (!name || !date) {
     alert('Por favor, preencha todos os campos.');
     return;
   }
 
+  // Verifica se a data é válida.
   if (reminderDate < today) {
-    alert('A data deve estar no futuro.');
+    alert('Insira uma data válida.');
     return;
   }
 
+  // Chama a função que envia o novo lembrete para o BD e limpa os inputs.
   try {
     const newReminder = await sendReminderToApi(name, date);
     document.getElementById('reminderName').value = ''; // Limpa o input.
@@ -127,9 +132,10 @@ async function addReminder() {
   }
 }
 
+// Função que envia o novo lembrete para o BD.
 async function sendReminderToApi(name, date) {
   const apiEndpoint = 'http://localhost:8080/lembretes';
-  const formattedDate = new Date(date).toISOString().split('T')[0];
+  const formattedDate = new Date(date).toISOString().split('T')[0]; 
   const reminderData = {
     nome: name,
     data: formattedDate

@@ -5,5 +5,4 @@ import br.com.dtilembrete.projetodtilembrete.entities.Lembrete;
 
 // Interface de controle CRUD.
 public interface ILembrete extends CrudRepository<Lembrete, Integer>{
-
 }
