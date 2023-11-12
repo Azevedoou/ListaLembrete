@@ -35,7 +35,7 @@ Para executar este projeto localmente, siga as etapas abaixo:
 
 ### Backend
 
-1. Navegue até o diretório raiz do backend [Raiz do Backend](./src/main/java/br/com/dtilembrete/projetodtilembrete).
+1. Navegue até o diretório [Raiz do Backend](./src/main/java/br/com/dtilembrete/projetodtilembrete).
 2. Execute `mvn spring-boot:run` para iniciar o servidor Spring Boot.
 3. O servidor estará rodando em `http://localhost:8080`.
 
@@ -53,7 +53,7 @@ Foi criado uma única tabela no Banco de Dados MySQL. [Comandos para inicializa�
 Copie os comandos, cole na sua base de dados e execute.
 
 ### Aplications properties
-Nesse arquivo[aplication.properties](./src/main/resources/application.properties), é preciso especificar o dbusername, password e também o host referente ao seu database no MySQL.
+Nesse arquivo [aplication.properties](./src/main/resources/application.properties), é preciso especificar o dbusername, password e também o host referente ao seu database no MySQL.
 
 spring.datasource.username = dbusername
 
