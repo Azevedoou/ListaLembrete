@@ -51,7 +51,7 @@ Foi criado uma única tabela no Banco de Dados MySQL. [Comandos para inicializa�
 Copie os comandos, cole na sua base de dados e execute.
 
 ### Aplications properties
-Nesse arquivo [aplication.properties](./src/main/resources/application.properties), é preciso especificar o dbusername, password e também o host referente ao seu database no MySQL.
+No arquivo [aplication.properties](./src/main/resources/application.properties), é preciso especificar o dbusername, password e também o host referente ao seu database no MySQL.
 
 spring.datasource.username = dbusername
 

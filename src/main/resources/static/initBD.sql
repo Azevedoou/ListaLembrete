@@ -1,4 +1,4 @@
-create database banco_de_usuarios;
+create database banco_de_lembretes_dti;
 
 use banco_de_usuarios;
 
