@@ -1,5 +1,5 @@
-# App de Lembretes DTI
-O App de Lembretes DTI é uma aplicação web simples para criar e gerenciar lembretes com datas específicas.
+# App de Lembretes 
+O App de Lembretes é uma aplicação web simples para criar e gerenciar lembretes com datas específicas.
 
 ## Código Construído
 Este projeto foi construído utilizando as seguintes tecnologias:
